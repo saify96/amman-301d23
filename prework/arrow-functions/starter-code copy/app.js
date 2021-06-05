@@ -108,42 +108,66 @@ const newObject = array => ({
 
 
 
-let sum = function(a, b, c, d) {
-  return a + b + c + d;
-};
+// let sum = function(a, b, c, d) {
+//   return a + b + c + d;
+// };
+
+
+let sum = (a,b,c,d) => a+b+c+d;
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = function() {
-  return {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  };
-};
+// let objectLit = function() {
+//   return {
+//     key1: 'value1',
+//     key2: 'value2',
+//     key3: 'value3',
+//   };
+// };
+
+
+let objectLit =() =>({
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+})
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
 
 
-let sumAndProduct = function(a, b) {
+// let sumAndProduct = function(a, b) {
+//   let sum = a + b;
+//   let product = a * b;
+//   return [sum, product];
+// };
+
+
+let sumAndProduct = (a,b) =>{
   let sum = a + b;
   let product = a * b;
   return [sum, product];
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
-
-
-let message = function(name) {
-  return `Hello, ${name}!`;
-};
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+console.log(sumAndProduct(3, 9));
+
+
+// let message = function(name) {
+//   return `Hello, ${name}!`;
+// };
+
+
+let message = name => `Hello, ${name}!`;
+
+
+// TODO: Uncomment the following line of code to see the output in the browser console
+console.log(message('Allie'));
 
 
 let Student = function(name, age, hometown) {
@@ -152,11 +176,19 @@ let Student = function(name, age, hometown) {
   this.hometown = hometown;
 };
 
+
+// let Student = (name, age, hometown)=>{
+//   this.name = name;
+//   this.age = age;
+//   this.hometown = hometown;
+// };
+
+
 let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -168,18 +200,24 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
 
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+// Student.courseName = function() {
+//   return 'This student is enrolled in Code 301.';
+// };
+
+
+let courseName =() => 'This student is enrolled in Code 301.';
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(Student.courseName());
+
+console.log(courseName());
 
 
 
@@ -190,17 +228,17 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//  global scope
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//  global scope
 // 3. Explain why "this" is different when an arrow function is used.
-//
+//  Arrow functions establish "this" based on the scope the Arrow function is defined within.
